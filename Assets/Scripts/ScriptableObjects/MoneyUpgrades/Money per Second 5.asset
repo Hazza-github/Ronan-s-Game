@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3f280b16ce80443ac7ef47ab83b0c6, type: 3}
+  m_Name: Money per Second 5
+  m_EditorClassIdentifier: 
+  upgradeAmount: 1000
+  originalUpgradeCost: 100000
+  currentUpgradeCost: 100000
+  costIncreaseMultiplier: 0.5
+  unlockLevel: 6
+  upgradeButtonText: Buy
+  upgradeButtonDescription: 'Visiting Uranus
+
+    Increase your money per second
+    by {0}
+
+    Unlock at Level 6'
