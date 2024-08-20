@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Energy per Second 5
   m_EditorClassIdentifier: 
   upgradeAmount: 2
-  originalUpgradeCost: 3000000
-  currentUpgradeCost: 3000000
-  costIncreaseMultiplier: 1.5
+  originalUpgradeCost: 30000000
+  currentUpgradeCost: 30000000
+  costIncreaseMultiplier: 1
   unlockLevel: 5
   upgradeButtonText: Buy
   upgradeButtonDescription: 'Volcanic Energy
 
-    Boost Resource by {0}x
+    Boost Resource by + {0}x
 
     Unlock
     at Level 5'
+  upgradeUIImage: {fileID: 0}

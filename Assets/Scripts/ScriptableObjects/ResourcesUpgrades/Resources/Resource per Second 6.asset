@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Resource per Second 6
   m_EditorClassIdentifier: 
   upgradeAmount: 10000000
-  originalUpgradeCost: 2500000
-  currentUpgradeCost: 2500000
+  originalUpgradeCost: 25000000000
+  currentUpgradeCost: 25000000000
   costIncreaseMultiplier: 0.5
   unlockLevel: 6
   upgradeButtonText: Buy
@@ -23,4 +23,5 @@ MonoBehaviour:
     Increase Resource per second by
     {0}
 
-    Unlock at Level 1'
+    Unlock at Level 6'
+  upgradeUIImage: {fileID: 0}

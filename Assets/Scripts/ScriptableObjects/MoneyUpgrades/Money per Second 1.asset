@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3f280b16ce80443ac7ef47ab83b0c6, type: 3}
   m_Name: Money per Second 1
   m_EditorClassIdentifier: 
-  upgradeAmount: 3
+  upgradeAmount: 1
   originalUpgradeCost: 100
   currentUpgradeCost: 100
   costIncreaseMultiplier: 0.5
@@ -24,3 +24,4 @@ MonoBehaviour:
     {0}
 
     Unlock at Level 2'
+  upgradeUIImage: {fileID: 0}

@@ -6,8 +6,10 @@ using TMPro;
 
 public class UpgradeButtonReferences : MonoBehaviour
 {
+
     public Button upgradeButton;
     public TextMeshProUGUI upgradeButtonText;
     public TextMeshProUGUI upgradeDescriptionText;
     public TextMeshProUGUI upgradeCostText;
+    public Image upgradeImage;
 }

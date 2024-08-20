@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class UpgradeCreator : ScriptableObject
 {
-    public float upgradeAmount = 1f;
+    public Sprite upgradeButtonSprite;
 
+    public float upgradeAmount = 1f;
     public double originalUpgradeCost = 100;
     public double currentUpgradeCost = 100;
     public double costIncreaseMultiplier = 0.05f;
@@ -14,6 +16,8 @@ public abstract class UpgradeCreator : ScriptableObject
     public string upgradeButtonText;
     [TextArea (3,10)]
     public string upgradeButtonDescription;
+
+    
 
     public abstract void ApplyUpgrade();
 

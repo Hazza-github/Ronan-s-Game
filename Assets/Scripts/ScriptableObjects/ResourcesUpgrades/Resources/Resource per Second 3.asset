@@ -23,4 +23,5 @@ MonoBehaviour:
     Increase Resource per second by {0}
 
     Unlock
-    at Level 1'
+    at Level 3'
+  upgradeUIImage: {fileID: 0}

@@ -15,12 +15,13 @@ MonoBehaviour:
   upgradeAmount: 5
   originalUpgradeCost: 10000000000
   currentUpgradeCost: 10000000000
-  costIncreaseMultiplier: 1.5
+  costIncreaseMultiplier: 1
   unlockLevel: 6
   upgradeButtonText: Buy
   upgradeButtonDescription: 'Nuclear Fusion
 
-    Boost Resource by {0}x
+    Boost Resource by + {0}x
 
     Unlock
     at Level 6'
+  upgradeUIImage: {fileID: 0}

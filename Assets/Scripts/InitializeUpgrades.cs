@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InitializeUpgrades : MonoBehaviour
@@ -20,6 +21,9 @@ public class InitializeUpgrades : MonoBehaviour
             buttonRef.upgradeButtonText.text = upgrades[currentIndex].upgradeButtonText;
             buttonRef.upgradeDescriptionText.SetText(upgrades[currentIndex].upgradeButtonDescription, upgrades[currentIndex].upgradeAmount);
             buttonRef.upgradeCostText.text = "Cost: " + upgrades[currentIndex].currentUpgradeCost;
+            
+            //set Image
+            buttonRef.upgradeImage.sprite = upgrades[currentIndex].upgradeButtonSprite;
 
             //set onclick
             buttonRef.upgradeButton.onClick.AddListener(delegate { GameManager.instance.OnUpgradeButtonClick(upgrades[currentIndex], buttonRef); });

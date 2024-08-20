@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c9c7bcaf3585b4ab259e707dd5c9d5, type: 3}
   m_Name: Resource per Second 1
   m_EditorClassIdentifier: 
-  upgradeAmount: 1
+  upgradeAmount: 2
   originalUpgradeCost: 50
   currentUpgradeCost: 50
-  costIncreaseMultiplier: 0.5
+  costIncreaseMultiplier: 0.25
   unlockLevel: 1
   upgradeButtonText: Buy
   upgradeButtonDescription: 'Recycle Bin
@@ -24,3 +24,4 @@ MonoBehaviour:
 
     Unlock
     at Level 1'
+  upgradeUIImage: {fileID: 0}

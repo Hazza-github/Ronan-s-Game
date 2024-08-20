@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3e0e123c67dbb4fac29f4da4b3b034, type: 3}
   m_Name: Energy per Second 4
   m_EditorClassIdentifier: 
-  upgradeAmount: 1.5
-  originalUpgradeCost: 100000
-  currentUpgradeCost: 100000
-  costIncreaseMultiplier: 1.5
+  upgradeAmount: 1
+  originalUpgradeCost: 1000000
+  currentUpgradeCost: 1000000
+  costIncreaseMultiplier: 1
   unlockLevel: 4
   upgradeButtonText: Buy
   upgradeButtonDescription: 'Power Plant
 
-    Boost Resource by {0}x
+    Boost Resource by + {0}x
 
     Unlock
     at Level 4'
+  upgradeUIImage: {fileID: 0}

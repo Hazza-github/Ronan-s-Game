@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: NPC Count 2
   m_EditorClassIdentifier: 
   upgradeAmount: 5
-  originalUpgradeCost: 100
-  currentUpgradeCost: 100
+  originalUpgradeCost: 150
+  currentUpgradeCost: 150
   costIncreaseMultiplier: 0.5
   unlockLevel: 2
   upgradeButtonText: Buy
@@ -24,3 +24,4 @@ MonoBehaviour:
 
     Unlock
     at Level 2'
+  upgradeUIImage: {fileID: 0}

@@ -24,3 +24,4 @@ MonoBehaviour:
 
     Unlock
     at Level 1'
+  upgradeUIImage: {fileID: 0}

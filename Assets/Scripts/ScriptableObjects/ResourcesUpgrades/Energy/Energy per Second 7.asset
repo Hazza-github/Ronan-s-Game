@@ -15,12 +15,13 @@ MonoBehaviour:
   upgradeAmount: 25
   originalUpgradeCost: 1000000000000
   currentUpgradeCost: 1000000000000
-  costIncreaseMultiplier: 1.5
+  costIncreaseMultiplier: 1
   unlockLevel: 7
   upgradeButtonText: Buy
   upgradeButtonDescription: 'Dyson Spheres
 
-    Boost Resource by {0}x
+    Boost Resource by + {0}x
 
     Unlock
     at Level 7'
+  upgradeUIImage: {fileID: 0}
