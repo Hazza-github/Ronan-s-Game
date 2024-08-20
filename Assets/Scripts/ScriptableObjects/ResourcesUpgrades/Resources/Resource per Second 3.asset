@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c9c7bcaf3585b4ab259e707dd5c9d5, type: 3}
   m_Name: Resource per Second 3
   m_EditorClassIdentifier: 
+  upgradeButtonSprite: {fileID: -147524962, guid: 3f7f822a7a644cc4ebb542366804451a, type: 3}
   upgradeAmount: 50
   originalUpgradeCost: 100000
   currentUpgradeCost: 100000
@@ -24,4 +25,3 @@ MonoBehaviour:
 
     Unlock
     at Level 3'
-  upgradeUIImage: {fileID: 0}

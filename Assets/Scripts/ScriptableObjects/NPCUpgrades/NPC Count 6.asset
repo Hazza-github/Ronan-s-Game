@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f1732c2458aa645ada1bc5d435a325, type: 3}
   m_Name: NPC Count 6
   m_EditorClassIdentifier: 
+  upgradeButtonSprite: {fileID: 1143714735, guid: 3f7f822a7a644cc4ebb542366804451a, type: 3}
   upgradeAmount: 250
   originalUpgradeCost: 100000000
   currentUpgradeCost: 100000000
@@ -24,4 +25,3 @@ MonoBehaviour:
 
     Unlock
     at Level 6'
-  upgradeUIImage: {fileID: 0}

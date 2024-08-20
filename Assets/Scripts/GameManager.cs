@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resourceCountText;
     [SerializeField] private TextMeshProUGUI resourcePerSecondText;
     [SerializeField] private TextMeshProUGUI npcCountText;
-
-    [SerializeField] private GameObject backgroundObj;
 
     [Space]
     public UpgradeCreator[] recreationalUpgrades;
@@ -59,6 +58,9 @@ public class GameManager : MonoBehaviour
     [Space]
     //win stuff
     public int gameLevel = 1;
+    [SerializeField] private Image backgroundObj;
+    [SerializeField] private Sprite backgroundImage2;
+    [SerializeField] private TextMeshProUGUI lvlText;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject lvlButton;
     private int lvlMultiplier = 100;
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
 
         currentMoneyCount = 100;
         resourceBoost = 1;
+        lvlText.text = "Level 1: Office";
 
         moneyDisplay = GetComponent<MoneyDisplay>();
         resourceDisplay = GetComponent<MoneyDisplay>();
@@ -191,6 +194,33 @@ public class GameManager : MonoBehaviour
         currentResourceCount -= Mathf.Pow(lvlMultiplier, gameLevel);
 
         gameLevel++;
+
+        switch(gameLevel)
+        {
+            case 1:
+                lvlText.text = "Level 1: Office";
+                break;
+
+            case 2:
+                lvlText.text = "Level 2: Building";
+                break;
+            case 3:
+                lvlText.text = "Level 3: Town";
+                break;
+            case 4:
+                lvlText.text = "Level 4: Country";
+                break;
+            case 5:
+                lvlText.text = "Level 5: Planet";
+                break;
+            case 6:
+                lvlText.text = "Level 6: Solar System";
+                backgroundObj.sprite = backgroundImage2;
+                break;
+            case 7:
+                lvlText.text = "Level 7: InterGalactic";
+                break;
+        }
 
         if (gameLevel == 8)
         {
