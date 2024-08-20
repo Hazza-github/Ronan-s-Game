@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f1732c2458aa645ada1bc5d435a325, type: 3}
-  m_Name: NPC Count 1
+  m_Script: {fileID: 11500000, guid: af3e0e123c67dbb4fac29f4da4b3b034, type: 3}
+  m_Name: Energy per Second 6
   m_EditorClassIdentifier: 
-  upgradeAmount: 3
-  originalUpgradeCost: 10
-  currentUpgradeCost: 10
-  costIncreaseMultiplier: 0.5
-  unlockLevel: 1
+  upgradeAmount: 5
+  originalUpgradeCost: 10000000000
+  currentUpgradeCost: 10000000000
+  costIncreaseMultiplier: 1.5
+  unlockLevel: 6
   upgradeButtonText: Buy
-  upgradeButtonDescription: 'Office Dividers
+  upgradeButtonDescription: 'Nuclear Fusion
 
-    Increase your workers by {0}
+    Boost Resource by {0}x
 
     Unlock
-    at Level 1'
+    at Level 6'

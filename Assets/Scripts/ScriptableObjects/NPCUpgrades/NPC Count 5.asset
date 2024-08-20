@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f1732c2458aa645ada1bc5d435a325, type: 3}
   m_Name: NPC Count 5
   m_EditorClassIdentifier: 
-  upgradeAmount: 1
+  upgradeAmount: 100
   originalUpgradeCost: 100
   currentUpgradeCost: 100
-  costIncreaseMultiplier: 0.05000000074505806
-  unlockLevel: 0
-  upgradeButtonText: 
-  upgradeButtonDescription: 
+  costIncreaseMultiplier: 0.5
+  unlockLevel: 5
+  upgradeButtonText: Buy
+  upgradeButtonDescription: 'Work Visa
+
+    Increase your workers by {0}
+
+    Unlock
+    at Level 5'

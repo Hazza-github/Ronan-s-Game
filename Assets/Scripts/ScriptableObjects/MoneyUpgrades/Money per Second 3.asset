@@ -20,7 +20,7 @@ MonoBehaviour:
   upgradeButtonText: Buy
   upgradeButtonDescription: 'Tax Increase
 
-    Increase your money per second by
+    Increase your money per Worker by
     {0}
 
     Unlock at Level 4'

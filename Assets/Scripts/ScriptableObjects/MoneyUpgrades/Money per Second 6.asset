@@ -21,6 +21,6 @@ MonoBehaviour:
   upgradeButtonDescription: 'ASDH [Artificially Stimulated Dopamine High]
 
     Increase
-    your money per second by {0}
+    your money per Worker by {0}
 
     Unlock at Level 7'

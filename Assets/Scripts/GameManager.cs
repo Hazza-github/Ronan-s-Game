@@ -25,10 +25,21 @@ public class GameManager : MonoBehaviour
     public GameObject moneyPerSecondObjToSpawn;
 
     [Space]
+    public UpgradeCreator[] npcUpgrades;
+    [SerializeField] private GameObject upgradeUIToSpawnNPC;
+    [SerializeField] private Transform upgradeUIParentNPC;
+
+    [Space]
     public UpgradeCreator[] resourceUpgrades;
     [SerializeField] private GameObject upgradeUIToSpawnResource;
     [SerializeField] private Transform upgradeUIParentResource;
     public GameObject resourcePerSecondObjToSpawn;
+
+    [Space]
+    public UpgradeCreator[] energyUpgrades;
+    [SerializeField] private GameObject upgradeUIToSpawnEnergy;
+    [SerializeField] private Transform upgradeUIParentEnergy;
+    public GameObject energyPerSecondObjToSpawn;
 
     [Space]
     public double npcCount = 1;
@@ -38,13 +49,19 @@ public class GameManager : MonoBehaviour
     public double currentResourceCount { get; set; }
     public double currentResourcePerSecond { get; set; }
 
+    public double resourceBoost {  get; set; }
     //upgrades
-
-    public int gameLevel = 1;
 
     private InitializeUpgrades initializeUpgrades;
     private MoneyDisplay moneyDisplay;
     private MoneyDisplay resourceDisplay;
+
+    [Space]
+    //win stuff
+    public int gameLevel = 1;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject lvlButton;
+    private int lvlMultiplier = 100;
 
     private void Awake()
     {
@@ -53,36 +70,57 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        currentMoneyCount = 10;
-        currentResourceCount = 10;
+        currentMoneyCount = 100;
+        resourceBoost = 1;
 
         moneyDisplay = GetComponent<MoneyDisplay>();
         resourceDisplay = GetComponent<MoneyDisplay>();
-
-        UpdateCurrentUI();
-        UpdatePerSecondUI();
 
         upgradeCanvas.SetActive(false);
         mainGameCanvas.SetActive(true);
 
         initializeUpgrades = GetComponent<InitializeUpgrades>();
         initializeUpgrades.Initialize(recreationalUpgrades, upgradeUIToSpawn, upgradeUIParent);
+        initializeUpgrades.Initialize(npcUpgrades, upgradeUIToSpawnNPC, upgradeUIParentNPC);
         initializeUpgrades.Initialize(resourceUpgrades, upgradeUIToSpawnResource, upgradeUIParentResource);
+        initializeUpgrades.Initialize(energyUpgrades, upgradeUIToSpawnEnergy, upgradeUIParentEnergy);
+
+        GameObject go = Instantiate(moneyPerSecondObjToSpawn, Vector3.zero, Quaternion.identity);
+        go.GetComponent<MoneyPerSecondTimer>().moneyPerSecond = npcCount;
+        SimpleMoneyPerSecondIncrease(npcCount);
+
+        UpdateCurrentUI();
+        UpdatePerSecondUI();
+    }
+
+
+    private void Update()
+    {
+        Debug.Log(Mathf.Pow(lvlMultiplier, gameLevel));
+
+        if (currentResourceCount >= Mathf.Pow(lvlMultiplier, gameLevel))
+        {
+            lvlButton.SetActive(true);
+        }
+        if (currentResourceCount < Mathf.Pow(lvlMultiplier, gameLevel))
+        {
+            lvlButton.SetActive(false);
+        }
     }
 
     #region UI Updates
 
     private void UpdateCurrentUI()
     {
-        moneyDisplay.UpdateMoneyText(currentMoneyCount, moneyCountText);
-        resourceDisplay.UpdateMoneyText(currentResourceCount, resourceCountText);
+        moneyDisplay.UpdateMoneyText(Mathf.RoundToInt((float)currentMoneyCount), moneyCountText, " £");
+        resourceDisplay.UpdateMoneyText(Mathf.RoundToInt((float)currentResourceCount), resourceCountText, " r");
+        npcCountText.text = npcCount.ToString() + " Workers";
     }
 
     private void UpdatePerSecondUI()
     {
-        moneyDisplay.UpdateMoneyText(currentMoneyPerSecond, moneyPerSecondText, "/s");
-        resourceDisplay.UpdateMoneyText(currentResourcePerSecond, resourcePerSecondText, "/s");
-
+        moneyDisplay.UpdateMoneyText(Mathf.RoundToInt((float)(currentMoneyPerSecond * npcCount)), moneyPerSecondText, " £/s");
+        resourceDisplay.UpdateMoneyText(Mathf.RoundToInt((float)(currentResourcePerSecond * resourceBoost)), resourcePerSecondText, " r/s");
     }
 
     #endregion
@@ -106,7 +144,7 @@ public class GameManager : MonoBehaviour
     #region Simple Increase
     public void SimpleMoneyIncrease(double amount)
     {
-        currentMoneyCount += amount;
+        currentMoneyCount += amount * npcCount;
         UpdateCurrentUI();
     }
 
@@ -118,16 +156,16 @@ public class GameManager : MonoBehaviour
 
     public void SimpleResourceIncrease(double amount)
     {
-        currentResourceCount += amount * npcCount;
+        currentResourceCount += amount * resourceBoost;
         UpdateCurrentUI();
     }
 
     public void SimpleResourcePerSecondIncrease(double amount)
     {
         currentResourcePerSecond += amount;
+
         UpdatePerSecondUI();
     }
-
 
     #endregion
 
@@ -140,10 +178,24 @@ public class GameManager : MonoBehaviour
 
             currentMoneyCount -= upgrade.currentUpgradeCost;
             UpdateCurrentUI();
+            UpdatePerSecondUI();
 
             upgrade.currentUpgradeCost = Mathf.Round((float)(upgrade.currentUpgradeCost* (1 + upgrade.costIncreaseMultiplier)));
 
             buttonRef.upgradeCostText.text = "Cost: " + upgrade.currentUpgradeCost;
+        }
+    }
+
+    public void OnLevelUpButtonClick()
+    {
+        currentResourceCount -= Mathf.Pow(lvlMultiplier, gameLevel);
+
+        gameLevel++;
+
+        if (gameLevel == 8)
+        {
+            winScreen.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 

@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f1732c2458aa645ada1bc5d435a325, type: 3}
-  m_Name: NPC Count 1
+  m_Script: {fileID: 11500000, guid: 05c9c7bcaf3585b4ab259e707dd5c9d5, type: 3}
+  m_Name: Resource per Second 5
   m_EditorClassIdentifier: 
-  upgradeAmount: 3
-  originalUpgradeCost: 10
-  currentUpgradeCost: 10
+  upgradeAmount: 25000
+  originalUpgradeCost: 500000
+  currentUpgradeCost: 500000
   costIncreaseMultiplier: 0.5
-  unlockLevel: 1
+  unlockLevel: 5
   upgradeButtonText: Buy
-  upgradeButtonDescription: 'Office Dividers
+  upgradeButtonDescription: 'Astroid Mining
 
-    Increase your workers by {0}
+    Increase Resource per second by
+    {0}
 
-    Unlock
-    at Level 1'
+    Unlock at Level 1'

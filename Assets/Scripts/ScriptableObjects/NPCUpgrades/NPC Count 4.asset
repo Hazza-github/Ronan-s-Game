@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f1732c2458aa645ada1bc5d435a325, type: 3}
   m_Name: NPC Count 4
   m_EditorClassIdentifier: 
-  upgradeAmount: 1
+  upgradeAmount: 25
   originalUpgradeCost: 100
   currentUpgradeCost: 100
-  costIncreaseMultiplier: 0.05000000074505806
-  unlockLevel: 0
-  upgradeButtonText: 
-  upgradeButtonDescription: 
+  costIncreaseMultiplier: 0.5
+  unlockLevel: 4
+  upgradeButtonText: Buy
+  upgradeButtonDescription: 'Higher Education
+
+    Increase your workers by {0}
+
+    Unlock
+    at Level 4'
